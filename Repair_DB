@@ -1,0 +1,10 @@
+https://support.pelco.com/s/article/How-to-check-the-integrity-of-the-SQL-Database-on-a-DigitalSENTRY-System-1538586559864?language=en_US
+
+
+ALTER DATABASE ManagementReporterDM SET SINGLE_USER WITH ROLLBACK IMMEDIATE
+GO
+ 
+DBCC CheckDB ('ManagementReporterDM', REPAIR_ALLOW_DATA_LOSS)
+GO
+ 
+ALTER DATABASE ManagementReporterDM SET MULTI_USER
